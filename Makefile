@@ -1,15 +1,15 @@
 .PHONY: build
 build:
-	docker image build -t linux-in-practice-2nd-image .
+	docker-compose build 
 
 build-clean:
-	docker image build --no-cache -t linux-in-practice-2nd-image .  
+	docker-compose build --no-cache
 	
 run:
-	docker run --name linux-in-practice-2nd-container -it linux-in-practice-2nd-image /bin/bash
+	docker-compose up 
 
 run-background:
-	docker run -d --name linux-in-practice-2nd-container -it linux-in-practice-2nd-image /bin/bash
+	docker-compose up -d
 
 start: 
 	docker start linux-in-practice-2nd-container
