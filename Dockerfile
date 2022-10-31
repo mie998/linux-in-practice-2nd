@@ -6,7 +6,7 @@ ENV PATH $PATH:./bin
 RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt install -y binutils build-essential \
   golang sysstat python3-matplotlib python3-pil fonts-takao fio \
   qemu-system-arm virt-manager libvirt-clients virtinst jq docker.io \
-  containerd libvirt-daemon-system sudo
+  containerd libvirt-daemon-system sudo strace
 
 CMD ["air", "-c", ".air.toml"]
 # add-user `id -un` libvirt

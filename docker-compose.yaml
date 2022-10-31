@@ -6,4 +6,4 @@ services:
     volumes: [.:/myapp]
     container_name: linux-in-practice-2nd-container
     image: linux-in-practice-2nd-image
-    command: tail -F anything
+    command: /bin/sh -c "while :; do sleep 10; done"
